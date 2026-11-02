@@ -11,6 +11,8 @@ import { UserProfileScreen } from './screens/UserProfileScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { NotFoundScreen } from './screens/NotFoundScreen';
 import { MusicPlayerScreen } from './screens/MusicPlayerScreen';
+import { SocialShareScreen } from './screens/SocialShareScreen';
+import { FlashMessageScreen } from './screens/FlashMessageScreen';
 
 interface HeroProps {
   onOpenChallenge: (challenge: Challenge) => void;
@@ -40,6 +42,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChallenge }) => {
         return <NotFoundScreen interactive={false} />;
       case 'music-player':
         return <MusicPlayerScreen interactive={false} />;
+      case 'social-share':
+        return <SocialShareScreen interactive={false} />;
+      case 'flash-message':
+        return <FlashMessageScreen interactive={false} />;
       default:
         return null;
     }

@@ -22,10 +22,10 @@ export const About: React.FC = () => {
                 I'm <strong className="font-semibold text-slate-900">{ACADEMIC_PROFILE.name}</strong>, a Software Engineering undergraduate at <strong className="font-semibold text-slate-900">{ACADEMIC_PROFILE.university}</strong>. My academic journey is centered around crafting software that is not only robust and scalable under the hood, but empathetic, intuitive, and delight-driven on the surface.
               </p>
               <p>
-                This portfolio represents my design challenge collection for the <strong className="font-semibold text-slate-900">{ACADEMIC_PROFILE.course}</strong> course. Through nine consecutive Daily UI prompts, I explored how cognitive load, visual balance, typography, and feedback states intersect to create frictionless interfaces.
+                This portfolio represents my design challenge collection for the <strong className="font-semibold text-slate-900">{ACADEMIC_PROFILE.course}</strong> course. Through eleven consecutive Daily UI prompts, I explored how cognitive load, visual balance, typography, and feedback states intersect to create frictionless interfaces.
               </p>
               <p>
-                Each challenge tackles a distinct practical problem—from student volunteer onboarding to precision budgeting calculators, scalable app icon semiotics, workspace security topology, 404 wayfinding, and atmospheric Hi-Fi audio playback.
+                Each challenge tackles a distinct practical problem—from student volunteer onboarding to precision budgeting calculators, scalable app icon semiotics, workspace security topology, 404 wayfinding, atmospheric Hi-Fi audio playback, mindful social citations, and dual-state flash messages.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export const About: React.FC = () => {
                 </div>
                 <div className="py-3 flex justify-between items-center">
                   <span className="text-slate-500 text-xs font-medium">Portfolio Scope</span>
-                  <span className="font-medium text-slate-700">9 Daily UI Challenges</span>
+                  <span className="font-medium text-slate-700">11 Daily UI Challenges</span>
                 </div>
                 <div className="py-3 flex justify-between items-center">
                   <span className="text-slate-500 text-xs font-medium">Focus Area</span>

@@ -19,6 +19,8 @@ import { UserProfileScreenFull } from './screens/full/UserProfileScreenFull';
 import { SettingsScreenFull } from './screens/full/SettingsScreenFull';
 import { NotFoundScreenFull } from './screens/full/NotFoundScreenFull';
 import { MusicPlayerScreenFull } from './screens/full/MusicPlayerScreenFull';
+import { SocialShareScreenFull } from './screens/full/SocialShareScreenFull';
+import { FlashMessageScreenFull } from './screens/full/FlashMessageScreenFull';
 
 interface DesignModalProps {
   challenge: Challenge | null;
@@ -80,6 +82,10 @@ export const DesignModal: React.FC<DesignModalProps> = ({
         return <NotFoundScreenFull />;
       case 'music-player':
         return <MusicPlayerScreenFull />;
+      case 'social-share':
+        return <SocialShareScreenFull />;
+      case 'flash-message':
+        return <FlashMessageScreenFull />;
       default:
         return null;
     }

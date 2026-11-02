@@ -11,6 +11,8 @@ import { UserProfileScreen } from './screens/UserProfileScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { NotFoundScreen } from './screens/NotFoundScreen';
 import { MusicPlayerScreen } from './screens/MusicPlayerScreen';
+import { SocialShareScreen } from './screens/SocialShareScreen';
+import { FlashMessageScreen } from './screens/FlashMessageScreen';
 
 interface ShowcaseProps {
   onOpenChallenge: (challenge: Challenge) => void;
@@ -26,6 +28,8 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
   const ch7 = CHALLENGES[6]; // Settings
   const ch8 = CHALLENGES[7]; // 404 Page
   const ch9 = CHALLENGES[8]; // Music Player
+  const ch10 = CHALLENGES[9]; // Social Share
+  const ch11 = CHALLENGES[10]; // Flash Message
 
   return (
     <section id="showcase" className="py-16 lg:py-24 bg-[#faf9f7] border-t border-slate-200/60">
@@ -39,7 +43,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
             Daily UI Challenges
           </h2>
           <p className="text-base text-slate-600 mt-3 leading-relaxed">
-            Nine challenges. Nine opportunities to explore different aspects of digital interface design, from cognitive load reduction to precision financial calculation, multi-device developer profiles, enterprise security topology, compassionate 404 wayfinding, and atmospheric Hi-Fi audio playback. Click any card or button below to inspect full high-resolution mockups.
+            Eleven challenges. Eleven opportunities to explore different aspects of digital interface design, from cognitive load reduction to precision financial calculation, multi-device developer profiles, enterprise security topology, compassionate 404 wayfinding, atmospheric Hi-Fi audio playback, mindful social citations, and dual-state flash messages. Click any card or button below to inspect full high-resolution mockups.
           </p>
         </div>
 
@@ -591,6 +595,125 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
                       onOpenChallenge(ch9);
                     }}
                     className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-slate-950 group-hover:text-white group-hover:border-slate-950 transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                  >
+                    <span>View Full Design</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 5: 2 Cards Grid for #010 (Social Share) and #011 (Flash Message) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Card 10: Social Share (#010) */}
+            <div
+              onClick={() => onOpenChallenge(ch10)}
+              className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-purple-300 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer group"
+            >
+              {/* Screen Preview Container */}
+              <div className="p-3 bg-[#fbf8fc] border-b border-purple-100">
+                <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-2 px-1">
+                  <span className="font-bold text-purple-900">{ch10.number}</span>
+                  <span className="text-[#630ed4] font-sans font-medium">{ch10.category}</span>
+                </div>
+                <div className="h-64 rounded-xl overflow-hidden pointer-events-none transform group-hover:scale-[1.01] transition-transform duration-300">
+                  <SocialShareScreen interactive={false} />
+                </div>
+              </div>
+
+              {/* Card Meta Content */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    {ch10.client}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950 group-hover:text-[#630ed4] transition-colors">
+                    {ch10.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    {ch10.summary}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mt-4">
+                    {ch10.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2.5 py-0.5 rounded-md bg-purple-50 text-purple-700 font-medium border border-purple-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Action */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenChallenge(ch10);
+                    }}
+                    className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-[#630ed4] group-hover:text-white group-hover:border-[#630ed4] transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                  >
+                    <span>View Full Design</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 11: Flash Message (#011) */}
+            <div
+              onClick={() => onOpenChallenge(ch11)}
+              className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-purple-300 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer group"
+            >
+              {/* Screen Preview Container */}
+              <div className="p-3 bg-[#fbf8fc] border-b border-purple-100">
+                <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-2 px-1">
+                  <span className="font-bold text-purple-900">{ch11.number}</span>
+                  <span className="text-[#630ed4] font-sans font-medium">{ch11.category}</span>
+                </div>
+                <div className="h-64 rounded-xl overflow-hidden pointer-events-none transform group-hover:scale-[1.01] transition-transform duration-300">
+                  <FlashMessageScreen interactive={false} />
+                </div>
+              </div>
+
+              {/* Card Meta Content */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    {ch11.client}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950 group-hover:text-[#630ed4] transition-colors">
+                    {ch11.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    {ch11.summary}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mt-4">
+                    {ch11.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2.5 py-0.5 rounded-md bg-purple-50 text-purple-700 font-medium border border-purple-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Action */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenChallenge(ch11);
+                    }}
+                    className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-[#630ed4] group-hover:text-white group-hover:border-[#630ed4] transition-all flex items-center justify-center gap-1.5 shadow-2xs"
                   >
                     <span>View Full Design</span>
                     <ArrowRight className="w-3.5 h-3.5" />

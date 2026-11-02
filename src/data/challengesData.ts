@@ -295,6 +295,70 @@ export const CHALLENGES: Challenge[] = [
       labelScore: 'Descriptive ARIA states for all audio controls',
     },
   },
+  {
+    id: 'social-share',
+    number: '#010',
+    category: 'Share & Citation UI',
+    client: 'LUMA EDITORIAL',
+    title: 'Social Share',
+    summary:
+      'A mindful social sharing and quotation citation engine designed for academic and editorial publishing, supporting quote snippets, preview cards, and friction-free link copying.',
+    tags: ['Mindful Sharing', 'Quote Highlighting', 'Multi-Channel'],
+    hciFocus: 'Cognitive Context Preservation & Fitts’ Law Distribution',
+    cognitiveRationale:
+      'Rather than intrusive social share bars that clutter reading immersion, this design uses contextual floating micro-actions directly on highlighted text passages and provides multi-format card preview generators (Quote, Photo Card, Link) to maximize share intentionality and user agency.',
+    heuristics: [
+      {
+        rule: 'Flexibility and Efficiency of Use',
+        description: 'Single-click clipboard copy paired with multi-channel direct dispatching.',
+      },
+      {
+        rule: 'Match Between System and Real World',
+        description: 'Visual quote cards mimic physical editorial pull-quotes and citations.',
+      },
+      {
+        rule: 'Aesthetic and Minimalist Design',
+        description: 'Luma lavender-tinted surfaces that recede until user expresses intent to share.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '14.1:1 AAA compliant contrast against warm lavender canvas',
+      targetSize: '44px minimum touch targets for all social triggers',
+      labelScore: 'Descriptive ARIA labels for assistive technologies',
+    },
+  },
+  {
+    id: 'flash-message',
+    number: '#011',
+    category: 'System Alert & Toast',
+    client: 'LUMA ALERTS',
+    title: 'Flash Message',
+    summary:
+      'A system flash message notification hub delivering clear, affirmative success states and actionable error recovery across sign-up, asset synchronization, and membership workflows.',
+    tags: ['System Feedback', 'Error Recovery', 'Auto-Dismiss Timer'],
+    hciFocus: 'Visibility of System Status & Non-Punitive Error Architecture',
+    cognitiveRationale:
+      'Implements Nielsen Heuristic #1 (Visibility of System Status) and #9 (Help Users Recognize and Recover from Errors). Features live countdown progress bars that pause on user hover to accommodate diverse reading speeds, inline remediation CTAs, and instant feedback chimes.',
+    heuristics: [
+      {
+        rule: 'Visibility of System Status',
+        description: 'Instant visual and sensory feedback for all asynchronous operations.',
+      },
+      {
+        rule: 'Help Users Recognize and Recover from Errors',
+        description: 'Plain-language diagnostics with one-click remedial action buttons.',
+      },
+      {
+        rule: 'User Control and Freedom',
+        description: 'Manual dismiss triggers and countdown pause on cursor hover.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '12.8:1 AAA compliant status banner typography',
+      targetSize: '48px accessible recovery action buttons',
+      labelScore: 'Role alert and live region announcements for screen readers',
+    },
+  },
 ];
 
 export const HCI_PRINCIPLES: HCIPrinciple[] = [
