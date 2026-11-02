@@ -13,6 +13,8 @@ import { NotFoundScreen } from './screens/NotFoundScreen';
 import { MusicPlayerScreen } from './screens/MusicPlayerScreen';
 import { SocialShareScreen } from './screens/SocialShareScreen';
 import { FlashMessageScreen } from './screens/FlashMessageScreen';
+import { EcommerceScreen } from './screens/EcommerceScreen';
+import { DirectMessagingScreen } from './screens/DirectMessagingScreen';
 
 interface ShowcaseProps {
   onOpenChallenge: (challenge: Challenge) => void;
@@ -30,6 +32,8 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
   const ch9 = CHALLENGES[8]; // Music Player
   const ch10 = CHALLENGES[9]; // Social Share
   const ch11 = CHALLENGES[10]; // Flash Message
+  const ch12 = CHALLENGES[11]; // E-commerce Shop
+  const ch13 = CHALLENGES[12]; // Direct Messaging
 
   return (
     <section id="showcase" className="py-16 lg:py-24 bg-[#faf9f7] border-t border-slate-200/60">
@@ -43,7 +47,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
             Daily UI Challenges
           </h2>
           <p className="text-base text-slate-600 mt-3 leading-relaxed">
-            Eleven challenges. Eleven opportunities to explore different aspects of digital interface design, from cognitive load reduction to precision financial calculation, multi-device developer profiles, enterprise security topology, compassionate 404 wayfinding, atmospheric Hi-Fi audio playback, mindful social citations, and dual-state flash messages. Click any card or button below to inspect full high-resolution mockups.
+            Thirteen challenges. Thirteen opportunities to explore different aspects of digital interface design, from cognitive load reduction to precision financial calculation, multi-device developer profiles, enterprise security topology, compassionate 404 wayfinding, atmospheric Hi-Fi audio playback, mindful social citations, dual-state flash messages, haute e-commerce retail, and direct messaging. Click any card or button below to inspect full high-resolution mockups.
           </p>
         </div>
 
@@ -714,6 +718,125 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
                       onOpenChallenge(ch11);
                     }}
                     className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-[#630ed4] group-hover:text-white group-hover:border-[#630ed4] transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                  >
+                    <span>View Full Design</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 6: 2 Cards Grid for #012 (E-commerce Shop) and #013 (Direct Messaging) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Card 12: E-commerce Shop (#012) */}
+            <div
+              onClick={() => onOpenChallenge(ch12)}
+              className="bg-white rounded-none border border-[#e8e2d9] shadow-sm hover:shadow-xl hover:border-[#191919] transition-all duration-300 flex flex-col overflow-hidden cursor-pointer group"
+            >
+              {/* Screen Preview Container */}
+              <div className="p-3 bg-[#fcf9f4] border-b border-[#e8e2d9]">
+                <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-2 px-1">
+                  <span className="font-bold text-[#191919]">{ch12.number}</span>
+                  <span className="text-[#9e836a] font-sans font-medium">{ch12.category}</span>
+                </div>
+                <div className="h-64 rounded-none overflow-hidden pointer-events-none transform group-hover:scale-[1.01] transition-transform duration-300">
+                  <EcommerceScreen interactive={false} />
+                </div>
+              </div>
+
+              {/* Card Meta Content */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#9e836a] block mb-1 font-mono">
+                    {ch12.client}
+                  </span>
+                  <h3 className="text-lg font-serif font-bold text-slate-950 group-hover:text-[#9e836a] transition-colors">
+                    {ch12.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    {ch12.summary}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mt-4">
+                    {ch12.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2.5 py-0.5 rounded-none bg-[#f5f0ea] text-[#191919] font-medium border border-[#e8e2d9]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Action */}
+                <div className="mt-6 pt-4 border-t border-[#e8e2d9]">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenChallenge(ch12);
+                    }}
+                    className="w-full py-2.5 px-4 rounded-none border border-[#191919] text-[#191919] text-xs font-mono font-semibold uppercase tracking-wider group-hover:bg-[#191919] group-hover:text-white transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                  >
+                    <span>View Full Design</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 13: Direct Messaging (#013) */}
+            <div
+              onClick={() => onOpenChallenge(ch13)}
+              className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer group"
+            >
+              {/* Screen Preview Container */}
+              <div className="p-3 bg-[#f8fafc] border-b border-[#e2e8f0]">
+                <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-2 px-1">
+                  <span className="font-bold text-[#4648d4]">{ch13.number}</span>
+                  <span className="text-[#6366f1] font-sans font-medium">{ch13.category}</span>
+                </div>
+                <div className="h-64 rounded-xl overflow-hidden pointer-events-none transform group-hover:scale-[1.01] transition-transform duration-300">
+                  <DirectMessagingScreen interactive={false} />
+                </div>
+              </div>
+
+              {/* Card Meta Content */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    {ch13.client}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950 group-hover:text-[#4648d4] transition-colors">
+                    {ch13.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    {ch13.summary}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mt-4">
+                    {ch13.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2.5 py-0.5 rounded-md bg-indigo-50 text-indigo-700 font-medium border border-indigo-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Action */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenChallenge(ch13);
+                    }}
+                    className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-[#4648d4] group-hover:text-white group-hover:border-[#4648d4] transition-all flex items-center justify-center gap-1.5 shadow-2xs"
                   >
                     <span>View Full Design</span>
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -13,6 +13,8 @@ import { NotFoundScreen } from './screens/NotFoundScreen';
 import { MusicPlayerScreen } from './screens/MusicPlayerScreen';
 import { SocialShareScreen } from './screens/SocialShareScreen';
 import { FlashMessageScreen } from './screens/FlashMessageScreen';
+import { EcommerceScreen } from './screens/EcommerceScreen';
+import { DirectMessagingScreen } from './screens/DirectMessagingScreen';
 
 interface HeroProps {
   onOpenChallenge: (challenge: Challenge) => void;
@@ -46,6 +48,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChallenge }) => {
         return <SocialShareScreen interactive={false} />;
       case 'flash-message':
         return <FlashMessageScreen interactive={false} />;
+      case 'ecommerce-shop':
+        return <EcommerceScreen interactive={false} />;
+      case 'direct-messaging':
+        return <DirectMessagingScreen interactive={false} />;
       default:
         return null;
     }

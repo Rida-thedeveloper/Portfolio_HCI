@@ -21,6 +21,8 @@ import { NotFoundScreenFull } from './screens/full/NotFoundScreenFull';
 import { MusicPlayerScreenFull } from './screens/full/MusicPlayerScreenFull';
 import { SocialShareScreenFull } from './screens/full/SocialShareScreenFull';
 import { FlashMessageScreenFull } from './screens/full/FlashMessageScreenFull';
+import { EcommerceScreenFull } from './screens/full/EcommerceScreenFull';
+import { DirectMessagingScreenFull } from './screens/full/DirectMessagingScreenFull';
 
 interface DesignModalProps {
   challenge: Challenge | null;
@@ -86,6 +88,10 @@ export const DesignModal: React.FC<DesignModalProps> = ({
         return <SocialShareScreenFull />;
       case 'flash-message':
         return <FlashMessageScreenFull />;
+      case 'ecommerce-shop':
+        return <EcommerceScreenFull />;
+      case 'direct-messaging':
+        return <DirectMessagingScreenFull />;
       default:
         return null;
     }

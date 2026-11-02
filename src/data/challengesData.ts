@@ -359,6 +359,70 @@ export const CHALLENGES: Challenge[] = [
       labelScore: 'Role alert and live region announcements for screen readers',
     },
   },
+  {
+    id: 'ecommerce-shop',
+    number: '#012',
+    category: 'High-Fashion E-Commerce',
+    client: 'ÉLAN ATELIER',
+    title: 'E-commerce Shop',
+    summary:
+      'A Parisian luxury atelier and editorial shop honoring zero-radius rectilinear geometry, warm unbleached silk tones, split lookbook curation, and friction-free conversion architecture.',
+    tags: ['Luxury Atelier', 'Split Lookbook', 'Zero-Radius UI', 'Cart Slide-Over'],
+    hciFocus: 'Visual Scannability, Fitts’s Law Target Sizing & Price Anchoring',
+    cognitiveRationale:
+      'Luxury e-commerce demands cognitive serenity over transactional noise. By pairing museum-grade editorial photography with stark rectilinear typography (EB Garamond & DM Sans), structured information architecture, and an instant tactile slide-out bag with zero-friction checkout progression, users experience unhurried high-intent decision making.',
+    heuristics: [
+      {
+        rule: 'Aesthetic and Minimalist Design',
+        description: 'Elimination of drop shadows in favor of hairline partitions and breathing room.',
+      },
+      {
+        rule: 'Flexibility and Efficiency of Use',
+        description: 'Multi-currency conversion, quick-size toggles, and persistent slide-over cart drawer.',
+      },
+      {
+        rule: 'Consistency and Standards',
+        description: 'Standardized SKU specifications, clean variant selectors, and predictable purchase funnels.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '15.2:1 Obsidian Carbon against Warm Ivory base',
+      targetSize: '52px zero-radius primary conversion triggers',
+      labelScore: 'ARIA-live announcements for bag updates and variant selection',
+    },
+  },
+  {
+    id: 'direct-messaging',
+    number: '#013',
+    category: 'Direct Messaging & Chat',
+    client: 'CONNECT MESSENGER',
+    title: 'Direct Messaging',
+    summary:
+      'A modern direct messaging interface balancing dense conversation navigation, real-time presence tokens, contextual message reactions, and fluid typing rhythm with asymmetrical chat geometry.',
+    tags: ['Real-Time Presence', 'Asymmetric Bubbles', 'Multi-Panel Chat', 'Typing State'],
+    hciFocus: 'Temporal Continuity, Conversational Proximity & Instant Feedback',
+    cognitiveRationale:
+      'Applying Gestalt proximity to conversational clusters: consecutive messages from the same sender collapse inner border radii to 4px to indicate conversational coherence. High-contrast emerald presence indicators and instant read-receipt feedback satisfy Nielsen Heuristic #1 (Visibility of System Status) without intruding on reading flow.',
+    heuristics: [
+      {
+        rule: 'Visibility of System Status',
+        description: 'Live emerald presence tokens, typing indicators, and double-tick delivery states.',
+      },
+      {
+        rule: 'Recognition Rather Than Recall',
+        description: 'Searchable message threads with inline participant context and snippet previews.',
+      },
+      {
+        rule: 'User Control and Freedom',
+        description: 'Reaction popovers, quick thread filtering, and draft persistence.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '13.5:1 Deep Charcoal and Vibrant Indigo contrast on crisp white canvas',
+      targetSize: '44px minimum touch targets on all interactive chat controls',
+      labelScore: 'Role log and status live regions for real-time incoming dispatches',
+    },
+  },
 ];
 
 export const HCI_PRINCIPLES: HCIPrinciple[] = [
