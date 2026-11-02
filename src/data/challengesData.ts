@@ -167,6 +167,70 @@ export const CHALLENGES: Challenge[] = [
       labelScore: 'Standardized iOS/Android squircle curvature',
     },
   },
+  {
+    id: 'user-profile',
+    number: '#006',
+    category: 'Mobile & Social UI',
+    client: 'NEXUS',
+    title: 'User Profile',
+    summary:
+      'A multi-dimensional member & developer profile balancing advisory status, live metrics, project highlights, career milestones, and community standing.',
+    tags: ['Information Architecture', 'Hierarchy & Scannability', 'Social Proof'],
+    hciFocus: 'Cognitive Chunking, Identity Signaling & Visual Scannability',
+    cognitiveRationale:
+      'Organizes diverse personal, career, and metric data into predictable hierarchical modules (bio, stats, projects, timeline, skills, and standing), reducing cognitive strain while establishing immediate professional credibility.',
+    heuristics: [
+      {
+        rule: 'Recognition Over Recall',
+        description: 'Instant visual badges for advisory availability, verification, and technical proficiencies.',
+      },
+      {
+        rule: 'Aesthetic and Minimalist Design',
+        description: 'Restrained, balanced typography with consistent iconography across career milestones.',
+      },
+      {
+        rule: 'Visibility of System Status',
+        description: 'Prominent standing score (2,940/3,000) and real-time profile engagement metrics.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '10.5:1 on high-contrast surfaces',
+      targetSize: '48px primary touch targets',
+      labelScore: 'Accessible metadata groupings & badges',
+    },
+  },
+  {
+    id: 'settings',
+    number: '#007',
+    category: 'System & Security UI',
+    client: 'NEXUS',
+    title: 'Workspace Settings',
+    summary:
+      'An enterprise system preferences dashboard unifying workspace localization, multi-channel notification matrix, privacy scopes, and cryptographic security controls.',
+    tags: ['Error Prevention', 'Direct Manipulation', 'Security Topology'],
+    hciFocus: 'Error Reversal, State Persistence & Granular Preference Mapping',
+    cognitiveRationale:
+      'Features persistent category navigation, tactile instant-toggle controls, and a persistent unsaved modifications toast with one-click discard/save to eliminate accidental state changes.',
+    heuristics: [
+      {
+        rule: 'Error Prevention & Recovery',
+        description: 'Persistent unsaved modifications banner preventing unintended configuration loss.',
+      },
+      {
+        rule: 'Match Between System and Real World',
+        description: 'Familiar switch toggles, color accent swatches, and clear dark/light mode surface visualizers.',
+      },
+      {
+        rule: 'Visibility of System Status',
+        description: 'Live auto-sync confirmation timestamp and active cryptographic session tokens.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '9.2:1 text & UI component contrast',
+      targetSize: '44px interactive switches & controls',
+      labelScore: 'Explicit assistive descriptions on all controls',
+    },
+  },
 ];
 
 export const HCI_PRINCIPLES: HCIPrinciple[] = [

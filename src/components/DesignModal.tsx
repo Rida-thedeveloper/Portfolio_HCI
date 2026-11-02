@@ -15,6 +15,8 @@ import { CheckoutScreenFull } from './screens/full/CheckoutScreenFull';
 import { SaaSScreenFull } from './screens/full/SaaSScreenFull';
 import { CalculatorScreenFull } from './screens/full/CalculatorScreenFull';
 import { AppIconScreenFull } from './screens/full/AppIconScreenFull';
+import { UserProfileScreenFull } from './screens/full/UserProfileScreenFull';
+import { SettingsScreenFull } from './screens/full/SettingsScreenFull';
 
 interface DesignModalProps {
   challenge: Challenge | null;
@@ -68,6 +70,10 @@ export const DesignModal: React.FC<DesignModalProps> = ({
         return <CalculatorScreenFull />;
       case 'mobile-app-icon':
         return <AppIconScreenFull />;
+      case 'user-profile':
+        return <UserProfileScreenFull />;
+      case 'settings':
+        return <SettingsScreenFull />;
       default:
         return null;
     }
