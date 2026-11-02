@@ -423,6 +423,70 @@ export const CHALLENGES: Challenge[] = [
       labelScore: 'Role log and status live regions for real-time incoming dispatches',
     },
   },
+  {
+    id: 'countdown-timer',
+    number: '#014',
+    category: 'Temporal UI & Telemetry',
+    client: 'CHRONO IQ / NASA & AERO',
+    title: 'Countdown Timer',
+    summary:
+      'A multi-context temporal control system answering whether a countdown is for a space launch, culinary smart oven, race car scoreboard, or athletic HIIT sprint.',
+    tags: ['Multi-Context', 'Auditory & Visual Cues', 'Error Prevention', 'Sub-Second Precision'],
+    hciFocus: 'Temporal Continuity, Sensory Confirmation & Critical Safety Gates',
+    cognitiveRationale:
+      'Provides immediate visibility of temporal progression through dual sensory feedback (synchronized Web Audio radar beeps and SVG radial progress rings) alongside intentional confirmation locks on catastrophic state changes (hold/abort), minimizing operational anxiety.',
+    heuristics: [
+      {
+        rule: 'Visibility of System Status',
+        description: 'Continuous millisecond scrub, pulsing stage rings, and synthesized audio telemetry.',
+      },
+      {
+        rule: 'Error Prevention & Recovery',
+        description: 'Physical safety guard interlock on abort & scrub commands requiring deliberate authorization.',
+      },
+      {
+        rule: 'Flexibility and Efficiency of Use',
+        description: 'Instant one-click context switching between Orbital, Oven, F1 Race, and HIIT circuits.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '14.8:1 Electric Amber/Cyan against Obsidian Deep',
+      targetSize: '56px primary transport triggers',
+      labelScore: 'ARIA live-region and alert role for temporal milestones',
+    },
+  },
+  {
+    id: 'on-off-switch',
+    number: '#015',
+    category: 'Hardware & Smart Touch Panel',
+    client: 'NESTORA OBSIDIAN',
+    title: 'On/Off Switch',
+    summary:
+      'A tactile glassmorphic dark command center for push-to-start electric vehicles, sub-zero smart refrigerators, and ambient whole-home IoT control panels.',
+    tags: ['Glassmorphic Dark UI', 'Tactile Toggles', 'Push-to-Start EV', 'Sub-Zero Cryo'],
+    hciFocus: 'Direct Manipulation, Affordance Signaling & State Distinction',
+    cognitiveRationale:
+      'Solves the ambiguity of binary state transitions through custom 48px tactile capsule tracks, emissive cyan halos (0 0 12px #00f2fe), haptic press depth, and distinct color-coded semantic feedback (cyan active, emerald eco, crimson override), eliminating accidental state triggers.',
+    heuristics: [
+      {
+        rule: 'Visibility of System Status',
+        description: 'Unmistakable glowing emissive state halos and active telemetry pods.',
+      },
+      {
+        rule: 'Match Between System and Real World',
+        description: 'Skeuomorphic tactile physical toggle geometry and rotary-style dimmers.',
+      },
+      {
+        rule: 'Error Prevention',
+        description: 'Two-factor biometric touch for EV push-to-start and critical security perimeters.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '16.1:1 Emissive Cyan on Sub-Zero Midnight',
+      targetSize: '48px x 26px capsule toggles & 64px push-to-start',
+      labelScore: 'Explicit aria-checked and role switch on all toggles',
+    },
+  },
 ];
 
 export const HCI_PRINCIPLES: HCIPrinciple[] = [

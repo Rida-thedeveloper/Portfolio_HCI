@@ -15,6 +15,8 @@ import { SocialShareScreen } from './screens/SocialShareScreen';
 import { FlashMessageScreen } from './screens/FlashMessageScreen';
 import { EcommerceScreen } from './screens/EcommerceScreen';
 import { DirectMessagingScreen } from './screens/DirectMessagingScreen';
+import { CountdownTimerScreen } from './screens/CountdownTimerScreen';
+import { OnOffSwitchScreen } from './screens/OnOffSwitchScreen';
 
 interface HeroProps {
   onOpenChallenge: (challenge: Challenge) => void;
@@ -52,6 +54,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChallenge }) => {
         return <EcommerceScreen interactive={false} />;
       case 'direct-messaging':
         return <DirectMessagingScreen interactive={false} />;
+      case 'countdown-timer':
+        return <CountdownTimerScreen interactive={false} />;
+      case 'on-off-switch':
+        return <OnOffSwitchScreen interactive={false} />;
       default:
         return null;
     }

@@ -23,6 +23,8 @@ import { SocialShareScreenFull } from './screens/full/SocialShareScreenFull';
 import { FlashMessageScreenFull } from './screens/full/FlashMessageScreenFull';
 import { EcommerceScreenFull } from './screens/full/EcommerceScreenFull';
 import { DirectMessagingScreenFull } from './screens/full/DirectMessagingScreenFull';
+import { CountdownTimerScreenFull } from './screens/full/CountdownTimerScreenFull';
+import { OnOffSwitchScreenFull } from './screens/full/OnOffSwitchScreenFull';
 
 interface DesignModalProps {
   challenge: Challenge | null;
@@ -59,7 +61,11 @@ export const DesignModal: React.FC<DesignModalProps> = ({
 
   if (!challenge) return null;
 
-  const isDark = challenge.id === 'saas-landing-page' || challenge.id === 'music-player';
+  const isDark =
+    challenge.id === 'saas-landing-page' ||
+    challenge.id === 'music-player' ||
+    challenge.id === 'countdown-timer' ||
+    challenge.id === 'on-off-switch';
   const currentIndex = allChallenges.findIndex((c) => c.id === challenge.id);
   const prevChallenge = allChallenges[(currentIndex - 1 + allChallenges.length) % allChallenges.length];
   const nextChallenge = allChallenges[(currentIndex + 1) % allChallenges.length];
@@ -92,6 +98,10 @@ export const DesignModal: React.FC<DesignModalProps> = ({
         return <EcommerceScreenFull />;
       case 'direct-messaging':
         return <DirectMessagingScreenFull />;
+      case 'countdown-timer':
+        return <CountdownTimerScreenFull />;
+      case 'on-off-switch':
+        return <OnOffSwitchScreenFull />;
       default:
         return null;
     }
