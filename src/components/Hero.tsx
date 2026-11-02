@@ -9,6 +9,8 @@ import { CalculatorScreen } from './screens/CalculatorScreen';
 import { AppIconScreen } from './screens/AppIconScreen';
 import { UserProfileScreen } from './screens/UserProfileScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { NotFoundScreen } from './screens/NotFoundScreen';
+import { MusicPlayerScreen } from './screens/MusicPlayerScreen';
 
 interface HeroProps {
   onOpenChallenge: (challenge: Challenge) => void;
@@ -34,6 +36,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChallenge }) => {
         return <UserProfileScreen interactive={false} />;
       case 'settings':
         return <SettingsScreen interactive={false} />;
+      case '404-page':
+        return <NotFoundScreen interactive={false} />;
+      case 'music-player':
+        return <MusicPlayerScreen interactive={false} />;
       default:
         return null;
     }
@@ -83,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChallenge }) => {
             <div className="pt-4 border-t border-slate-200/90 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-slate-500 font-medium">
               <span className="inline-flex items-center gap-1.5 text-slate-800 font-semibold">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                7 Completed Challenges
+                {CHALLENGES.length} Completed Challenges
               </span>
               <span className="text-slate-300">·</span>
               <span>Department of CS & Software Engineering</span>

@@ -17,6 +17,8 @@ import { CalculatorScreenFull } from './screens/full/CalculatorScreenFull';
 import { AppIconScreenFull } from './screens/full/AppIconScreenFull';
 import { UserProfileScreenFull } from './screens/full/UserProfileScreenFull';
 import { SettingsScreenFull } from './screens/full/SettingsScreenFull';
+import { NotFoundScreenFull } from './screens/full/NotFoundScreenFull';
+import { MusicPlayerScreenFull } from './screens/full/MusicPlayerScreenFull';
 
 interface DesignModalProps {
   challenge: Challenge | null;
@@ -53,7 +55,7 @@ export const DesignModal: React.FC<DesignModalProps> = ({
 
   if (!challenge) return null;
 
-  const isDark = challenge.id === 'saas-landing-page';
+  const isDark = challenge.id === 'saas-landing-page' || challenge.id === 'music-player';
   const currentIndex = allChallenges.findIndex((c) => c.id === challenge.id);
   const prevChallenge = allChallenges[(currentIndex - 1 + allChallenges.length) % allChallenges.length];
   const nextChallenge = allChallenges[(currentIndex + 1) % allChallenges.length];
@@ -74,6 +76,10 @@ export const DesignModal: React.FC<DesignModalProps> = ({
         return <UserProfileScreenFull />;
       case 'settings':
         return <SettingsScreenFull />;
+      case '404-page':
+        return <NotFoundScreenFull />;
+      case 'music-player':
+        return <MusicPlayerScreenFull />;
       default:
         return null;
     }

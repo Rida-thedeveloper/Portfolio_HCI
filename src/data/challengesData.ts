@@ -231,6 +231,70 @@ export const CHALLENGES: Challenge[] = [
       labelScore: 'Explicit assistive descriptions on all controls',
     },
   },
+  {
+    id: '404-page',
+    number: '#008',
+    category: 'System Error & Recovery',
+    client: 'AURA SLATE / NEXUS',
+    title: '404 Error Page',
+    summary:
+      'An engaging, humanized 404 recovery state that reduces user disorientation with playful diagnostics, quick navigation alternatives, search teleportation, and friendly guidance.',
+    tags: ['Wayfinding', 'Error Recovery', 'Cognitive Delight'],
+    hciFocus: 'Compassionate Error Architecture & Zero Dead-Ends',
+    cognitiveRationale:
+      'Instead of a dead-end technical code, this 404 page applies Nielsen Heuristic #9 (Help Users Recognize, Diagnose, and Recover from Errors) by converting confusion into exploration with smart search teleportation, route diagnostics, and warm conversational tone.',
+    heuristics: [
+      {
+        rule: 'Help Users Recognize and Recover from Errors',
+        description: 'Plain-language explanation of what happened with clear paths forward.',
+      },
+      {
+        rule: 'Flexibility and Efficiency of Use',
+        description: 'Direct jump shortcuts to Home, Profile, Projects, and Search.',
+      },
+      {
+        rule: 'Aesthetic and Minimalist Design',
+        description: 'Gentle cosmic astronaut theme with crisp typography and zero visual chaos.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '11.8:1 AAA compliant text on canvas',
+      targetSize: '48px accessible recovery triggers',
+      labelScore: 'Full keyboard accessible search & route buttons',
+    },
+  },
+  {
+    id: 'music-player',
+    number: '#009',
+    category: 'Audio & Media Dashboard',
+    client: 'ATMOSPHERIC OBSIDIAN',
+    title: 'Music Player',
+    summary:
+      'A next-generation Hi-Fi audio player designed for deep listening and multi-device context (Tour Bus, Studio Monitor, Browser), featuring dynamic frequency spectrums and lossless controls.',
+    tags: ['Audio Telemetry', 'Direct Manipulation', 'Multi-Device Context'],
+    hciFocus: 'Sensory Feedback, Fitts’ Law Controls & Multi-Surface Adaptation',
+    cognitiveRationale:
+      'Prioritizes high-frequency playback actions (Play/Pause, scrub slider, volume) with generous 56px touch affordances, real-time waveform visualizers, and seamless device-mode switching between studio monitors, dashboard, and browser.',
+    heuristics: [
+      {
+        rule: 'Visibility of System Status',
+        description: 'Real-time scrub head, lossless audio stream bit-rate (24-bit/96kHz), and pulsing waveform.',
+      },
+      {
+        rule: 'Direct Manipulation',
+        description: 'Scrubbable track timeline and rotary-style volume sliders with instant tactile feedback.',
+      },
+      {
+        rule: 'Match Between System and Real World',
+        description: 'Physical vinyl/album art staging paired with familiar digital queue management.',
+      },
+    ],
+    wcagMetrics: {
+      contrast: '9.4:1 luminous violet/cyan against obsidian surface',
+      targetSize: '56px primary transport triggers',
+      labelScore: 'Descriptive ARIA states for all audio controls',
+    },
+  },
 ];
 
 export const HCI_PRINCIPLES: HCIPrinciple[] = [

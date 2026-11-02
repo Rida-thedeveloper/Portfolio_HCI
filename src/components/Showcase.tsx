@@ -9,6 +9,8 @@ import { CalculatorScreen } from './screens/CalculatorScreen';
 import { AppIconScreen } from './screens/AppIconScreen';
 import { UserProfileScreen } from './screens/UserProfileScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { NotFoundScreen } from './screens/NotFoundScreen';
+import { MusicPlayerScreen } from './screens/MusicPlayerScreen';
 
 interface ShowcaseProps {
   onOpenChallenge: (challenge: Challenge) => void;
@@ -22,6 +24,8 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
   const ch5 = CHALLENGES[4]; // App Icon
   const ch6 = CHALLENGES[5]; // User Profile
   const ch7 = CHALLENGES[6]; // Settings
+  const ch8 = CHALLENGES[7]; // 404 Page
+  const ch9 = CHALLENGES[8]; // Music Player
 
   return (
     <section id="showcase" className="py-16 lg:py-24 bg-[#faf9f7] border-t border-slate-200/60">
@@ -35,7 +39,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
             Daily UI Challenges
           </h2>
           <p className="text-base text-slate-600 mt-3 leading-relaxed">
-            Seven challenges. Seven opportunities to explore different aspects of digital interface design, from cognitive load reduction to precision financial calculation, multi-device developer profiles, and enterprise security topology. Click any card or button below to inspect full high-resolution mockups.
+            Nine challenges. Nine opportunities to explore different aspects of digital interface design, from cognitive load reduction to precision financial calculation, multi-device developer profiles, enterprise security topology, compassionate 404 wayfinding, and atmospheric Hi-Fi audio playback. Click any card or button below to inspect full high-resolution mockups.
           </p>
         </div>
 
@@ -466,6 +470,125 @@ export const Showcase: React.FC<ShowcaseProps> = ({ onOpenChallenge }) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       onOpenChallenge(ch7);
+                    }}
+                    className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-slate-950 group-hover:text-white group-hover:border-slate-950 transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                  >
+                    <span>View Full Design</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 4: 2 Cards Grid for #008 (404 Page) and #009 (Music Player) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Card 8: 404 Page (#008) */}
+            <div
+              onClick={() => onOpenChallenge(ch8)}
+              className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer group"
+            >
+              {/* Screen Preview Container */}
+              <div className="p-3 bg-[#faf8ff] border-b border-indigo-100">
+                <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-2 px-1">
+                  <span className="font-bold text-slate-800">{ch8.number}</span>
+                  <span className="text-indigo-600 font-sans font-medium">{ch8.category}</span>
+                </div>
+                <div className="h-64 rounded-xl overflow-hidden pointer-events-none transform group-hover:scale-[1.01] transition-transform duration-300">
+                  <NotFoundScreen interactive={false} />
+                </div>
+              </div>
+
+              {/* Card Meta Content */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    {ch8.client}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950 group-hover:text-indigo-600 transition-colors">
+                    {ch8.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    {ch8.summary}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mt-4">
+                    {ch8.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-medium border border-slate-200/60"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Action */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenChallenge(ch8);
+                    }}
+                    className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-slate-950 group-hover:text-white group-hover:border-slate-950 transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                  >
+                    <span>View Full Design</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 9: Music Player (#009) */}
+            <div
+              onClick={() => onOpenChallenge(ch9)}
+              className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer group"
+            >
+              {/* Screen Preview Container */}
+              <div className="p-3 bg-[#0d0e13] border-b border-slate-800">
+                <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-2 px-1">
+                  <span className="font-bold text-white">{ch9.number}</span>
+                  <span className="text-[#7bd0ff] font-sans font-medium">{ch9.category}</span>
+                </div>
+                <div className="h-64 rounded-xl overflow-hidden pointer-events-none transform group-hover:scale-[1.01] transition-transform duration-300">
+                  <MusicPlayerScreen interactive={false} />
+                </div>
+              </div>
+
+              {/* Card Meta Content */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    {ch9.client}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950 group-hover:text-purple-600 transition-colors">
+                    {ch9.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    {ch9.summary}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mt-4">
+                    {ch9.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-medium border border-slate-200/60"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Action */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenChallenge(ch9);
                     }}
                     className="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-slate-800 text-xs font-semibold group-hover:bg-slate-950 group-hover:text-white group-hover:border-slate-950 transition-all flex items-center justify-center gap-1.5 shadow-2xs"
                   >
